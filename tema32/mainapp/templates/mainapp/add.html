@@ -1,0 +1,13 @@
+{% extends 'mainapp/header.html' %}
+
+    {% block content %}
+        <h1>Adauga Carte</h1>
+        <form action="{% url 'add' %}" method="post">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input Class="btn btn-primary" type="submit" value="Add">
+            <a class="btn btn-secondary" href="{% url 'home' %}">Back</a>
+        </form>
+    {% endblock %}

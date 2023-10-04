@@ -1,0 +1,9 @@
+{% extends 'mainapp/header.html' %}
+
+    {% block content %}
+        <h1>MBDB</h1>
+        <a class="btn btn-info" href="{% url 'add'%}">Add Book</a>
+        {% for book in Books %}
+            <a href="book/{{book.id}}">{{book.title}}</a>
+        {% endfor %}
+    {% endblock %}
